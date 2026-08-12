@@ -49,8 +49,14 @@ class ProjectForm
                     ->columnSpanFull(),
                 FileUpload::make('thumbnail')
                     ->image()
+                    ->disk('public')
                     ->directory('projects')
-                    ->helperText('Gambar cover (opsional)'),
+                    ->imageResizeMode('cover')
+                    ->imageResizeTargetWidth(1200)
+                    ->imageResizeTargetHeight(675)
+                    ->imageEditor()
+                    ->maxSize(4096)
+                    ->helperText('Gambar cover (opsional, auto-resize 1200x675)'),
                 TextInput::make('repo_url')
                     ->url(),
                 TextInput::make('demo_url')
