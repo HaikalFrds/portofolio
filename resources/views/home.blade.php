@@ -2,28 +2,33 @@
 @section('title', 'Home')
 
 @section('content')
-    <section class="py-12">
-        <h1 class="text-4xl font-bold tracking-tight text-white sm:text-5xl">
-            Haikal Firdaus
+    <section class="mx-auto max-w-6xl px-6 pt-16 pb-12">
+        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-ink/50">Web Developer & ML Enthusiast</p>
+        <h1 class="mt-6 font-extrabold uppercase leading-[0.9] tracking-tight"
+            style="font-size: clamp(2.75rem, 12vw, 11rem);">
+            Haikal<br>Firdaus
         </h1>
-        <p class="mt-4 max-w-2xl text-lg text-slate-400">
-            Web Developer & Machine Learning Enthusiast. Kumpulan project yang sudah saya buat.
-        </p>
-        <div class="mt-6 flex gap-3">
-            <a href="{{ route('projects.index') }}" class="rounded-lg bg-indigo-600 px-5 py-2.5 text-sm font-medium text-white hover:bg-indigo-500">Lihat Projects</a>
-            <a href="{{ route('contact') }}" class="rounded-lg border border-slate-700 px-5 py-2.5 text-sm font-medium text-slate-200 hover:bg-slate-900">Kontak</a>
+        <div class="mt-8 flex flex-wrap items-center gap-4">
+            <a href="{{ route('projects.index') }}" class="rounded-full bg-ink px-6 py-3 text-sm font-medium text-cream hover:opacity-80">Lihat Work</a>
+            <a href="{{ route('contact') }}" class="rounded-full border border-ink/20 px-6 py-3 text-sm font-medium hover:bg-ink hover:text-cream">Kontak</a>
         </div>
     </section>
 
-    <section class="mt-8">
-        <div class="mb-6 flex items-center justify-between">
-            <h2 class="text-xl font-semibold text-white">Featured Projects</h2>
-            <a href="{{ route('projects.index') }}" class="text-sm text-indigo-400 hover:text-indigo-300">Semua →</a>
+    <section class="mx-auto max-w-6xl px-6 py-16">
+        <p class="max-w-3xl text-2xl font-medium leading-snug sm:text-3xl">
+            I'm Haikal, an Information Systems & Technology student at Jakarta State University, building across data science and full-stack web development.
+        </p>
+    </section>
+
+    <section class="mx-auto max-w-6xl px-6 py-8">
+        <div class="mb-10 flex items-end justify-between border-b border-ink/10 pb-4">
+            <h2 class="text-3xl font-bold uppercase tracking-tight">Featured Work</h2>
+            <a href="{{ route('projects.index') }}" class="text-sm font-medium hover:opacity-60">View All →</a>
         </div>
         @if ($featured->isEmpty())
-            <p class="text-slate-500">Belum ada featured project.</p>
+            <p class="text-ink/50">Belum ada featured project.</p>
         @else
-            <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            <div class="grid gap-8 sm:grid-cols-2">
                 @foreach ($featured as $project)
                     @include('partials.project-card')
                 @endforeach

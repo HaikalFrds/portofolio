@@ -1,30 +1,32 @@
-<! DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>@yield('title', 'My Portfolio') - Haikal Firdaus</title>
+    <title>@yield('title', 'Portofolio') - Haikal Firdaus</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
-    <header class="sticky top-0 z-20 border-b border-slate-800 bg-slate-950/80 backdrop-blur">
-        <nav class="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
-            <a href="{{ route('home') }}" class="text-lg font-semibold tracking-tight">Haikal Firdaus<span class="text-indigo-400">.</span></a>
-            <div class="flex items-center gap-6 text-sm text-slate-300">
-                <a href="{{ route('home') }}" class="hover:text-white">Home</a>
-                <a href="{{ route('projects.index') }}" class="hover:text-white">Projects</a>
-                <a href="{{ route('about') }}" class="hover:text-white">About</a>
-                <a href="{{ route('contact') }}" class="hover:text-white">Contact</a>
+<body class="min-h-screen bg-cream text-ink antialiased">
+    <header class="sticky top-0 z-20 border-b border-ink/10 bg-cream/80 backdrop-blur">
+        <nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
+            <a href="{{ route('home') }}" class="text-lg font-extrabold uppercase tracking-tight">Haikal</a>
+            <div class="flex items-center gap-8 text-sm font-medium">
+                <a href="{{ route('home') }}" class="hover:opacity-60">Home</a>
+                <a href="{{ route('projects.index') }}" class="hover:opacity-60">Work</a>
+                <a href="{{ route('about') }}" class="hover:opacity-60">About</a>
+                <a href="{{ route('contact') }}" class="rounded-full bg-ink px-4 py-2 text-cream hover:opacity-80">Contact</a>
             </div>
         </nav>
     </header>
 
-    <main class="mx-auto max-w-5xl px-6 py-12">
+    <main>
         @yield('content')
     </main>
 
-    <footer class="border-t border-slate-800 py-8 text-center text-sm text-slate-500">
-        © {{ date('Y') }} Haikal Firdaus. Built with Laravel.
+    <footer class="mt-24 border-t border-ink/10">
+        <div class="mx-auto max-w-6xl px-6 py-10 text-sm text-ink/50">
+            © {{ date('Y') }} Haikal Firdaus - Built with Laravel.
+        </div>
     </footer>
 </body>
 </html>
