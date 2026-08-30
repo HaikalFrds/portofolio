@@ -1,4 +1,5 @@
 @import 'tailwindcss';
+@custom-variant dark (&:where(.dark, .dark *));
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
@@ -11,35 +12,53 @@
     --color-ink: #111111;
 }
 
+.dark {
+    --color-cream: #121212;
+    --color-ink: #f2ede6;
+}
+
+
 @layer components {
     .logo-mark {
         overflow: visible;
     }
 
     .logo-mark #bar-h {
-        animation: logo-slide-left 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) backwards !important;
+        animation: logo-slide-left 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
     }
 
     .logo-mark #bar-f {
-        animation: logo-slide-right 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 0.25s backwards !important;
+        animation: logo-slide-right 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 0.25s backwards;
     }
 
     @keyframes logo-slide-left {
         from { transform: translateX(-24px); opacity: 0; }
-        to { transform: translateX(0); opacity: 1; }
+        to   { transform: translateX(0); opacity: 1; }
     }
 
     @keyframes logo-slide-right {
         from { transform: translateX(24px); opacity: 0; }
-        to { transform: translateX(0); opacity: 1; }
+        to   { transform: translateX(0); opacity: 1; }
     }
 
     @media (prefers-reduced-motion: reduce) {
         .logo-mark #bar-h,
         .logo-mark #bar-f {
             animation: none;
-            transform: none;
-            opacity: 1;
         }
     }
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+    animation: none;
+    mix-blend-mode: normal;
+}
+
+::view-transition-old(root) {
+    z-index: 1;
+}
+
+::view-transition-new(root) {
+    z-index: 2;
 }

@@ -2,6 +2,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Lenis from 'lenis';
 import './scrollAnimations';
+import './theme';
 
 AOS.init({
     duration: 700,
