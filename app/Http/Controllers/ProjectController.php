@@ -14,7 +14,7 @@ class ProjectController extends Controller
 
         $projects = Project::query()
             ->published()
-            ->when($category, fn ($q) => $q->where('category_id', $category))
+            ->when($category, fn ($q) => $q->where('category', $category))
             ->ordered()
             ->get();
 

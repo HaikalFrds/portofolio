@@ -8,13 +8,20 @@
 </head>
 <body class="min-h-screen bg-cream text-ink antialiased">
     <header class="sticky top-0 z-20 border-b border-ink/10 bg-cream/80 backdrop-blur">
-        <nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
-            <a href="{{ route('home') }}" class="text-lg font-extrabold uppercase tracking-tight">Haikal</a>
-            <div class="flex items-center gap-8 text-sm font-medium">
-                <a href="{{ route('home') }}" class="hover:opacity-60">Home</a>
-                <a href="{{ route('projects.index') }}" class="hover:opacity-60">Work</a>
-                <a href="{{ route('about') }}" class="hover:opacity-60">About</a>
-                <a href="{{ route('contact') }}" class="rounded-full bg-ink px-4 py-2 text-cream hover:opacity-80">Contact</a>
+        <nav class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-4">
+            <a href="{{ route('home') }}" aria-label="Home">
+                @include('partials.logo')
+            </a>
+
+            <div class="flex items-center gap-2 sm:gap-6 text-sm font-medium">
+                <a href="{{ route('projects.index') }}"
+                   class="rounded-full px-3 py-2 transition-colors hover:bg-ink/5 {{ request()->routeIs('projects.*') ? 'text-ink' : 'text-ink/60' }}">
+                    Work
+                </a>
+                <a href="{{ route('experiences.index') }}"
+                   class="rounded-full px-3 py-2 transition-colors hover:bg-ink/5 {{ request()->routeIs('experiences.*') ? 'text-ink' : 'text-ink/60' }}">
+                    Experiences
+                </a>
             </div>
         </nav>
     </header>
@@ -25,7 +32,7 @@
 
     <footer class="mt-24 border-t border-ink/10">
         <div class="mx-auto max-w-6xl px-6 py-10 text-sm text-ink/50">
-            © {{ date('Y') }} Haikal Firdaus - Built with Laravel.
+            © {{ date('Y') }} Haikal Firdaus
         </div>
     </footer>
 </body>

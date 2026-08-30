@@ -3,7 +3,7 @@
 
 @section('content')
     <article class="mx-auto max-w-4xl px-6 pt-12 pb-8">
-        <a href="{{ route('projects.index') }}" class="text-sm font-medium text-ink/50 hover:text-ink">← All Work</a>
+        <a href="{{ route('projects.index') }}" class="text-sm font-medium text-ink/50 hover:text-ink">← All Experiences</a>
 
         <div class="mt-6 flex items-center gap-3">
             <span class="rounded-full border border-ink/15 px-3 py-1 text-xs font-medium uppercase tracking-wide">{{ $project->category }}</span>
