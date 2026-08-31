@@ -2,10 +2,8 @@
 @section('title', 'Experiences')
 
 @section('content')
-    <section class="mx-auto max-w-4xl px-6 pt-16 pb-8">
-        <h1 class="font-extrabold uppercase leading-none tracking-tight" style="font-size: clamp(2.5rem, 9vw, 7rem);">
-            Experiences
-        </h1>
+    <section class="mx-auto max-w-4xl px-6 pt-14 pb-8">
+        <h1 class="display-lg font-extrabold uppercase">Experiences</h1>
     </section>
 
     <section class="mx-auto max-w-4xl px-6 py-8">
@@ -19,7 +17,7 @@
                         <span class="absolute -left-[5px] mt-2 h-2.5 w-2.5 rounded-full {{ $exp->is_current ? 'bg-ink' : 'bg-ink/30' }}"></span>
 
                         <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-                            <h2 class="text-xl font-bold tracking-tight">{{ $exp->role }}</h2>
+                            <h2 class="text-lg font-bold tracking-tight">{{ $exp->role }}</h2>
                             @if ($exp->is_current)
                                 <span class="rounded-full bg-ink px-2.5 py-0.5 text-xs font-medium text-cream">Now</span>
                             @endif

@@ -2,10 +2,10 @@
 @section('title', 'Work')
 
 @section('content')
-    <section class="mx-auto max-w-6xl px-6 pt-16 pb-8">
-        <h1 class="font-extrabold uppercase leading-none tracking-tight" style="font-size: clamp(2.5rem, 9vw, 7rem);">Work</h1>
+    <section class="mx-auto max-w-5xl px-6 pt-14 pb-8">
+        <h1 class="display-lg font-extrabold uppercase">Work</h1>
 
-        <div class="mt-10 flex flex-wrap gap-2">
+        <div class="mt-8 flex flex-wrap gap-2">
             <a href="{{ route('projects.index') }}"
                class="rounded-full px-4 py-2 text-sm font-medium {{ ! $category ? 'bg-ink text-cream' : 'border border-ink/15 hover:bg-ink hover:text-cream' }}">All</a>
             @foreach ($categories as $cat)
@@ -15,7 +15,7 @@
         </div>
     </section>
 
-    <section class="mx-auto max-w-6xl px-6 py-8">
+    <section class="mx-auto max-w-5xl px-6 py-8">
         @if ($projects->isEmpty())
             <p class="text-ink/50">Belum ada project.</p>
         @else

@@ -10,8 +10,8 @@
             @if ($project->featured)<span class="text-xs font-medium text-ink/40">★ Featured</span>@endif
         </div>
 
-        <h1 class="mt-4 font-extrabold uppercase leading-[0.95] tracking-tight" style="font-size: clamp(2.25rem, 7vw, 5rem);">{{ $project->title }}</h1>
-        <p class="mt-5 max-w-2xl text-xl text-ink/70">{{ $project->summary }}</p>
+        <h1 class="display-lg mt-4 font-extrabold uppercase">{{ $project->title }}</h1>
+        <p class="mt-5 max-w-2xl text-lg text-ink/70">{{ $project->summary }}</p>
 
         <div class="mt-6 flex flex-wrap gap-3">
             @if ($project->demo_url)
@@ -36,11 +36,11 @@
         @endif
 
         @if ($project->description)
-            <div class="mt-8 whitespace-pre-line text-lg leading-relaxed text-ink/80">{{ $project->description }}</div>
+            <div class="mt-8 whitespace-pre-line leading-relaxed text-ink/80">{{ $project->description }}</div>
         @endif
 
         @if ($project->meta)
-            <div class="mt-10 rounded-2xl border border-ink/10 bg-white p-6">
+            <div class="mt-10 rounded-2xl border border-ink/10 bg-ink/[0.03] p-6">
                 <h2 class="mb-4 text-sm font-semibold uppercase tracking-wide text-ink/50">Detail</h2>
                 <dl class="grid gap-4 sm:grid-cols-2">
                     @foreach ($project->meta as $key => $value)

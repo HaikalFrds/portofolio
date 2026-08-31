@@ -15,7 +15,7 @@
 </head>
 <body class="min-h-screen bg-cream text-ink antialiased">
     <header class="sticky top-0 z-20 border-b border-ink/10 bg-cream/80 backdrop-blur">
-        <nav class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-4">
+        <nav class="mx-auto flex max-w-5xl items-center justify-between gap-4 px-6 py-4">
             <a href="{{ route('home') }}" aria-label="Home">
                 @include('partials.logo')
             </a>
@@ -48,7 +48,7 @@
     </main>
 
     <footer class="mt-24 border-t border-ink/10">
-        <div class="mx-auto max-w-6xl px-6 py-10 text-sm text-ink/50">
+        <div class="mx-auto max-w-5xl px-6 py-10 text-sm text-ink/50">
             © {{ date('Y') }} Haikal Firdaus
         </div>
     </footer>

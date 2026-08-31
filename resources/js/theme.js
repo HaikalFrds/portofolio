@@ -17,16 +17,9 @@ function initThemeToggle() {
             return;
         }
 
-        // titik pusat gelombang = tengah tombol
         const rect = btn.getBoundingClientRect();
-        const x = rect.left + rect.width / 2;
-        const y = rect.top + rect.height / 2;
-
-        // radius sampai sudut layar terjauh, biar gelombang nutup penuh
-        const endRadius = Math.hypot(
-            Math.max(x, window.innerWidth - x),
-            Math.max(y, window.innerHeight - y)
-        );
+        const xPercent = ((rect.left + rect.width / 2) / window.innerWidth) * 100;
+        const yPercent = ((rect.top + rect.height / 2) / window.innerHeight) * 100;
 
         const transition = document.startViewTransition(() => applyTheme(willBeDark));
 
@@ -35,13 +28,13 @@ function initThemeToggle() {
         document.documentElement.animate(
             {
                 clipPath: [
-                    `circle(0px at ${x}px ${y}px)`,
-                    `circle(${endRadius}px at ${x}px ${y}px)`,
+                    `circle(0% at ${xPercent}% ${yPercent}%)`,
+                    `circle(150% at ${xPercent}% ${yPercent}%)`,
                 ],
             },
             {
-                duration: 550,
-                easing: 'cubic-bezier(0.4, 0, 0.2, 1)',
+                duration: 1000,
+                easing: 'cubic-bezier(0.22, 1, 0.36, 1)',
                 pseudoElement: '::view-transition-new(root)',
             }
         );
