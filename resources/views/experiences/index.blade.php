@@ -8,7 +8,7 @@
 
     <section class="mx-auto max-w-4xl px-6 py-8">
         @if ($experiences->isEmpty())
-            <p class="text-ink/50">Belum ada experience.</p>
+            <p class="text-ink/50">No experiences yet.</p>
         @else
             <ol class="relative border-l border-ink/15">
                 @foreach ($experiences as $exp)

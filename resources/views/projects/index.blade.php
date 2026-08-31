@@ -17,7 +17,7 @@
 
     <section class="mx-auto max-w-5xl px-6 py-8">
         @if ($projects->isEmpty())
-            <p class="text-ink/50">Belum ada project.</p>
+            <p class="text-ink/50">No projects yet.</p>
         @else
             <div class="grid gap-8 sm:grid-cols-2">
                 @foreach ($projects as $project)

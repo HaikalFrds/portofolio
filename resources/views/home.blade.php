@@ -18,6 +18,8 @@
         </p>
     </section>
 
+    @include('partials.github-activity')
+
     {{-- FEATURED WORK --}}
     <section id="work" class="mx-auto max-w-5xl scroll-mt-24 px-6 py-8">
         <div class="mb-8 flex items-end justify-between border-b border-ink/10 pb-4">
@@ -25,7 +27,7 @@
             <a href="{{ route('projects.index') }}" class="text-sm font-medium hover:opacity-60">View All →</a>
         </div>
         @if ($featured->isEmpty())
-            <p class="text-ink/50">Belum ada featured project.</p>
+            <p class="text-ink/50">No featured projects yet.</p>
         @else
             <div class="grid gap-8 sm:grid-cols-2">
                 @foreach ($featured as $project)
@@ -41,9 +43,13 @@
     <section id="contact" class="mx-auto max-w-5xl scroll-mt-24 px-6 py-16">
         <p class="text-sm font-semibold uppercase tracking-[0.2em] text-ink/50">Let's talk</p>
         <h2 data-aos="fade-up" class="display-lg mt-5 font-extrabold uppercase">Contact</h2>
-        <div data-aos="fade-up" data-aos-delay="100" class="mt-8 space-y-3 text-base text-ink/80">
-            <p>Email: <a href="mailto:haikalfirdausfisika@gmail.com" class="underline hover:opacity-60">haikalfirdausfisika@gmail.com</a></p>
-            <p>(Tambah LinkedIn / GitHub di sini.)</p>
+        <div data-aos="fade-up" data-aos-delay="100" class="mt-8">
+            <a href="mailto:haikalfirdaus498@gmail.com" class="text-lg underline underline-offset-4 hover:opacity-60">
+                haikalfirdaus498@gmail.com
+            </a>
+            <div class="mt-6">
+                @include('partials.social-links')
+            </div>
         </div>
     </section>
 @endsection

@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Project;
-use Illuminate\view\View;
+use App\Services\GithubContributions;
+use Illuminate\View\View;
 
 class HomeController extends Controller
 {
-    public function index(): View
+    public function index(GithubContributions $github): View
     {
         $featured = Project::query()
             ->published()
@@ -15,6 +16,8 @@ class HomeController extends Controller
             ->ordered()
             ->get();
 
-        return view('home', compact('featured'));
+        $contributions = $github->calendar();
+
+        return view('home', compact('featured', 'contributions'));
     }
 }
