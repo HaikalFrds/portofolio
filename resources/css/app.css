@@ -59,6 +59,47 @@
             animation: none;
         }
     }
+
+    .marquee {
+        overflow: hidden;
+        /* tepi kiri-kanan memudar, biar badge tidak terpotong mendadak */
+        mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+        -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+    }
+
+    .marquee-track {
+        display: flex;
+        width: max-content;
+    }
+
+    .marquee-track-left {
+        animation: marquee-left 45s linear infinite;
+    }
+
+    .marquee-track-right {
+        animation: marquee-right 45s linear infinite;
+    }
+
+    /* isinya digandakan persis, jadi geser 50% = kembali ke titik yang identik */
+    @keyframes marquee-left {
+        from { transform: translateX(0); }
+        to   { transform: translateX(-50%); }
+    }
+
+    @keyframes marquee-right {
+        from { transform: translateX(-50%); }
+        to   { transform: translateX(0); }
+    }
+
+    .marquee:hover .marquee-track {
+        animation-play-state: paused;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .marquee-track {
+            animation: none;
+        }
+    }
 }
 
 ::view-transition-old(root),

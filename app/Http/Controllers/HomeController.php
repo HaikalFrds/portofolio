@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Project;
 use App\Services\GithubContributions;
 use Illuminate\View\View;
+use App\Models\Technology;
 
 class HomeController extends Controller
 {
@@ -18,6 +19,11 @@ class HomeController extends Controller
 
         $contributions = $github->calendar();
 
-        return view('home', compact('featured', 'contributions'));
+        $technologies = Technology::query()
+            ->published()
+            ->ordered()
+            ->get();
+
+        return view('home', compact('featured', 'contributions', 'technologies'));
     }
 }

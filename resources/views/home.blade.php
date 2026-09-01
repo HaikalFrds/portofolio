@@ -17,8 +17,9 @@
             I'm Haikal, an Information Systems & Technology student at Jakarta State University, building across data science and full-stack web development.
         </p>
     </section>
-
-    @include('partials.github-activity')
+    
+    {{-- TECHNOLOGIES --}}
+    @include('partials.technologies')
 
     {{-- FEATURED WORK --}}
     <section id="work" class="mx-auto max-w-5xl scroll-mt-24 px-6 py-8">
@@ -38,6 +39,9 @@
             </div>
         @endif
     </section>
+
+    {{-- GITHUB ACTIVITY --}}
+    @include('partials.github-activity')
 
     {{-- CONTACT --}}
     <section id="contact" class="mx-auto max-w-5xl scroll-mt-24 px-6 py-16">
