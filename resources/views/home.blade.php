@@ -40,6 +40,24 @@
         @endif
     </section>
 
+    {{-- EXPERIENCES --}}
+    <section class="mx-auto max-w-5xl px-6 py-16">
+        <div class="mb-8 flex items-end justify-between border-b border-ink/10 pb-4">
+            <h2 class="text-2xl font-bold uppercase tracking-tight">Experiences</h2>
+            <a href="{{ route('experiences.index') }}" class="text-sm font-medium hover:opacity-60">View All →</a>
+        </div>
+
+        @if ($experiences->isEmpty())
+            <p class="text-ink/50">No experiences yet.</p>
+        @else
+            <ol class="relative space-y-10 border-l border-ink/15 pl-8">
+                @foreach ($experiences as $exp)
+                    @include('partials.experience-item', ['exp' => $exp, 'compact' => true])
+                @endforeach
+            </ol>
+        @endif
+    </section>
+
     {{-- GITHUB ACTIVITY --}}
     @include('partials.github-activity')
 

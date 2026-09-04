@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Project;
 use App\Services\GithubContributions;
 use Illuminate\View\View;
+use App\Models\Experience;
 use App\Models\Technology;
 
 class HomeController extends Controller
@@ -24,6 +25,12 @@ class HomeController extends Controller
             ->ordered()
             ->get();
 
-        return view('home', compact('featured', 'contributions', 'technologies'));
+        $experiences = Experience::query()
+            ->published()
+            ->ordered()
+            ->take(3)
+            ->get();
+
+        return view('home', compact('featured', 'contributions', 'technologies', 'experiences'));
     }
 }
