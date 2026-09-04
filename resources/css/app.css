@@ -53,13 +53,6 @@
         to   { transform: translateX(0); opacity: 1; }
     }
 
-    @media (prefers-reduced-motion: reduce) {
-        .logo-mark #bar-h,
-        .logo-mark #bar-f {
-            animation: none;
-        }
-    }
-
     .marquee {
         overflow: hidden;
         /* tepi kiri-kanan memudar, biar badge tidak terpotong mendadak */
@@ -93,12 +86,6 @@
 
     .marquee:hover .marquee-track {
         animation-play-state: paused;
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-        .marquee-track {
-            animation: none;
-        }
     }
 }
 

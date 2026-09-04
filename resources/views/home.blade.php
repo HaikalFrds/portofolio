@@ -4,7 +4,7 @@
 @section('content')
     {{-- HERO --}}
     <section class="mx-auto max-w-5xl px-6 pt-14 pb-10">
-        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-ink/50">Web Developer & ML Enthusiast</p>
+        <p data-aos="fade-up" class="text-sm font-semibold uppercase tracking-[0.2em] text-ink/50">Web Developer & ML Enthusiast</p>
         <h1 class="display-xl mt-5 font-extrabold uppercase" data-parallax="0.15">
             Haikal<br>Firdaus
         </h1>
@@ -23,7 +23,7 @@
 
     {{-- FEATURED WORK --}}
     <section id="work" class="mx-auto max-w-5xl scroll-mt-24 px-6 py-8">
-        <div class="mb-8 flex items-end justify-between border-b border-ink/10 pb-4">
+        <div data-aos="fade-up" class="mb-8 flex items-end justify-between border-b border-ink/10 pb-4">
             <h2 class="text-2xl font-bold uppercase tracking-tight">Featured Work</h2>
             <a href="{{ route('projects.index') }}" class="text-sm font-medium hover:opacity-60">View All →</a>
         </div>
@@ -42,7 +42,7 @@
 
     {{-- EXPERIENCES --}}
     <section class="mx-auto max-w-5xl px-6 py-16">
-        <div class="mb-8 flex items-end justify-between border-b border-ink/10 pb-4">
+        <div data-aos="fade-up" class="mb-8 flex items-end justify-between border-b border-ink/10 pb-4">
             <h2 class="text-2xl font-bold uppercase tracking-tight">Experiences</h2>
             <a href="{{ route('experiences.index') }}" class="text-sm font-medium hover:opacity-60">View All →</a>
         </div>

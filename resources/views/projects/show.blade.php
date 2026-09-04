@@ -10,7 +10,7 @@
             @if ($project->featured)<span class="text-xs font-medium text-ink/40">★ Featured</span>@endif
         </div>
 
-        <h1 class="display-lg mt-4 font-extrabold uppercase">{{ $project->title }}</h1>
+        <h1 data-aos="fade-up" data-aos-once="true" class="display-lg mt-4 font-extrabold uppercase">{{ $project->title }}</h1>
         <p class="mt-5 max-w-2xl text-lg text-ink/70">{{ $project->summary }}</p>
 
         <div class="mt-6 flex flex-wrap gap-3">
@@ -23,8 +23,7 @@
         </div>
 
         @if ($project->thumbnail)
-            <img src="{{ asset('storage/' . $project->thumbnail) }}" alt="{{ $project->title }}"
-                 class="mt-10 w-full rounded-2xl border border-ink/10 object-cover">
+            <img data-aos="fade-up" data-aos-once="true" src="{{ asset('storage/' . $project->thumbnail) }}" alt="{{ $project->title }}"
         @endif
 
         @if ($project->tech_stack)
@@ -40,7 +39,7 @@
         @endif
 
         @if ($project->meta)
-            <div class="mt-10 rounded-2xl border border-ink/10 bg-ink/[0.03] p-6">
+            <div data-aos="fade-up" data-aos-once="true" class="mt-10 rounded-2xl border border-ink/10 bg-ink/[0.03] p-6">
                 <h2 class="mb-4 text-sm font-semibold uppercase tracking-wide text-ink/50">Detail</h2>
                 <dl class="grid gap-4 sm:grid-cols-2">
                     @foreach ($project->meta as $key => $value)

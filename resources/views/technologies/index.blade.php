@@ -3,7 +3,7 @@
 
 @section('content')
     <section class="mx-auto max-w-5xl px-6 pt-14 pb-8">
-        <h1 class="display-lg font-extrabold uppercase">Technologies</h1>
+        <h1 data-aos="fade-up" data-aos-once="true" class="display-lg font-extrabold uppercase">Technologies</h1>
         <p class="mt-5 max-w-2xl text-lg text-ink/70">
             Tools and technologies I work with across web development and data science.
         </p>

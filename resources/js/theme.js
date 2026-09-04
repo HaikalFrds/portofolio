@@ -9,10 +9,9 @@ function initThemeToggle() {
 
     btn.addEventListener('click', async () => {
         const willBeDark = !document.documentElement.classList.contains('dark');
-        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
         // browser lama / user minta kurangi animasi: ganti langsung tanpa efek
-        if (!document.startViewTransition || reduceMotion) {
+        if (!document.startViewTransition) {
             applyTheme(willBeDark);
             return;
         }

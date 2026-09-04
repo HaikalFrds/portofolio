@@ -37,9 +37,9 @@
     @endphp
 
     <section class="mx-auto max-w-5xl px-6 py-16">
-        <h2 class="mb-6 text-2xl font-bold uppercase tracking-tight">GitHub Activity</h2>
+        <h2 data-aos="fade-up" class="mb-6 text-2xl font-bold uppercase tracking-tight">GitHub Activity</h2>
 
-        <div class="rounded-2xl border border-ink/15 p-6">
+        <div data-aos="fade-up" data-aos-delay="100" class="rounded-2xl border border-ink/15 p-6">
             <div class="overflow-x-auto pb-1">
                 {{-- kolomnya 1fr, jadi grafik melebar mengikuti lebar kotak --}}
                 <div class="min-w-[680px]">
