@@ -19,9 +19,9 @@
     <div class="flex items-start gap-4">
         @if ($exp->logo)
             <img src="{{ asset('storage/'.$exp->logo) }}" alt="{{ $exp->organization }}"
-                 class="h-12 w-12 shrink-0 rounded-xl border border-ink/10 bg-ink/[0.03] object-contain p-1.5">
+                 class="h-12 w-12 shrink-0 rounded-xl border border-ink/10 bg-white object-contain p-1.5">
         @else
-            <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-ink/10 bg-ink/[0.03] text-lg font-bold text-ink/30">
+            <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-ink/10 bg-white text-lg font-bold text-neutral-400">
                 {{ strtoupper(substr($exp->organization, 0, 1)) }}
             </span>
         @endif
