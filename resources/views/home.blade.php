@@ -3,19 +3,45 @@
 
 @section('content')
     {{-- HERO --}}
-    <section class="mx-auto max-w-5xl px-6 pt-14 pb-10">
-        <p data-aos="fade-up" class="text-sm font-semibold uppercase tracking-[0.2em] text-ink/50">Web Developer & ML Enthusiast</p>
-        <h1 class="display-xl mt-5 font-extrabold uppercase" data-parallax="0.15">
-            Haikal<br>Firdaus
-        </h1>
-    </section>
+    <section id="about" class="mx-auto max-w-5xl scroll-mt-24 px-6 pt-14 pb-12">
+        <div class="flex items-center gap-5">
+            <img src="{{ asset('images/avatar.jpg') }}" alt="Haikal Firdaus"
+                class="h-32 w-32 shrink-0 rounded-full border border-ink/15 object-cover sm:h-40 sm:w-40">
+            <div>
+                <h1 class="text-2xl font-bold tracking-tight sm:text-3xl">Haikal Firdaus</h1>
+                <div class="mt-3">
+                    @include('partials.social-links')
+                </div>
+            </div>
+        </div>
 
-    {{-- ABOUT --}}
-    <section id="about" class="mx-auto max-w-5xl scroll-mt-24 px-6 py-16">
-        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-ink/50">About</p>
-        <p data-aos="fade-up" class="mt-5 max-w-2xl text-lg leading-relaxed text-ink/80 sm:text-xl">
-            I'm Haikal, an Information Systems & Technology student at Jakarta State University, building across data science and full-stack web development.
+        <p data-aos="fade-up" class="mt-10 text-3xl font-bold leading-tight tracking-tight sm:text-4xl">
+            Full-Stack Web Developer
+            <span class="text-ink/40">— Laravel &amp; Machine Learning</span>
         </p>
+
+        <p data-aos="fade-up" data-aos-delay="100" class="mt-6 max-w-3xl text-lg leading-loose text-ink/70">
+            I'm an Information Systems &amp; Technology student at Universitas Negeri Jakarta. I build internal web applications with 
+            <span class="inline-flex items-center gap-1.5 rounded-md bg-ink/[0.06] px-2 py-0.5 align-middle text-[0.85em] font-medium text-ink">
+                <img src="https://cdn.simpleicons.org/laravel" alt="" loading="lazy" class="h-[1em] w-[1em]">Laravel
+            </span> and 
+            <span class="inline-flex items-center gap-1.5 rounded-md bg-ink/[0.06] px-2 py-0.5 align-middle text-[0.85em] font-medium text-ink">
+                <img src="https://cdn.simpleicons.org/livewire" alt="" loading="lazy" class="h-[1em] w-[1em]">Livewire
+            </span> on the web side, and train time series models in 
+            <span class="inline-flex items-center gap-1.5 rounded-md bg-ink/[0.06] px-2 py-0.5 align-middle text-[0.85em] font-medium text-ink">
+                <img src="https://cdn.simpleicons.org/python" alt="" loading="lazy" class="h-[1em] w-[1em]">Python
+            </span> for forecasting problems. Most recently I built a production monitoring system for an automotive manufacturer, and a hotel revenue forecasting model that reached 7.9% MAPE.
+        </p>
+
+        <a href="{{ asset('files/cv.pdf') }}" target="_blank" rel="noopener"
+           data-aos="fade-up" data-aos-delay="200"
+           class="group mt-8 inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3 text-sm font-medium text-cream transition-opacity hover:opacity-80">
+            View Resume
+            <svg class="h-4 w-4 transition-transform group-hover:translate-x-1"
+                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="m9 18 6-6-6-6"/>
+            </svg>
+        </a>
     </section>
     
     {{-- TECHNOLOGIES --}}
@@ -68,17 +94,13 @@
                 <p class="text-sm font-semibold uppercase tracking-[0.2em] text-ink/50">Let's talk</p>
                 <h2 data-aos="fade-up" class="display-lg mt-5 font-extrabold uppercase">Let's work together</h2>
                 <p data-aos="fade-up" data-aos-delay="100" class="mt-5 text-lg leading-relaxed text-ink/70">
-                    Open to internships and collaboration in full-stack web development and machine learning. Feel free to reach out — I usually reply within a day.
+                    Open to internships and collaboration in full-stack web development and machine learning. Feel free to reach out - I usually reply within a day.
                 </p>
-
-                <div data-aos="fade-up" data-aos-delay="200" class="mt-8">
-                    @include('partials.social-links')
-                </div>
             </div>
 
             <div data-aos="fade-up" data-aos-delay="100" class="space-y-3 self-center">
                 {{-- EMAIL --}}
-                <a href="mailto:haikalfirdaus498@gmail.com"
+                <a href="mailto:{{ config('portfolio.email') }}"
                    class="group flex items-center gap-4 rounded-2xl border border-ink/15 bg-ink/[0.03] p-4 transition-colors hover:border-ink/30 hover:bg-ink/[0.06]">
                     <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-ink/10">
                         <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -87,7 +109,7 @@
                     </span>
                     <span class="min-w-0 flex-1">
                         <span class="block text-xs font-semibold uppercase tracking-[0.15em] text-ink/50">Email</span>
-                        <span class="block truncate">haikalfirdaus498@gmail.com</span>
+                        <span class="block truncate">{{ config('portfolio.email') }}</span>
                     </span>
                     <svg class="h-4 w-4 shrink-0 text-ink/30 transition-transform group-hover:translate-x-1"
                          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -96,7 +118,7 @@
                 </a>
 
                 {{-- WHATSAPP --}}
-                <a href="https://wa.me/6287784451145" target="_blank" rel="noopener noreferrer"
+                <a href="https://wa.me/{{ config('portfolio.whatsapp') }}" target="_blank" rel="noopener noreferrer"
                    class="group flex items-center gap-4 rounded-2xl border border-ink/15 bg-ink/[0.03] p-4 transition-colors hover:border-ink/30 hover:bg-ink/[0.06]">
                     <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-ink/10">
                         <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
